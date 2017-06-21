@@ -183,8 +183,65 @@ window.sampleValue;
 
 ### Consoleの実行ログ
 
+##確認テスト4時間目Q2
 ```
-【ここに書く】
+function mul(a) {
+    results = 1;
+    for(var count = 0 , length = a.length; count < length; count++){
+        results *= a[count];
+    }
+    return results;
+}
+```
+
+#5-1-4
+```
+var sampleHashMap = {};
+undefined
+sampleHashMap['test']=5;
+5
+sampleHashMap['test'];
+5
+sampleHashMap.test;
+5
+sampleHashMap.test=7;
+7
+sampleHashMap.test;
+7
+var sampleHashMap = {test :11};
+undefined
+sampleHashMap.test;
+11
+```
+
+#5-2-1
+```
+function sampleFunction(message = `test`){ return message};
+undefined
+var functionVar = sampleFunction;
+undefined
+functionVar();
+"test"
+functionVar('hoge');
+"hoge"
+functionVar;
+function sampleFunction(message = `test`){ return message}
+```
+
+#5-2-2
+```
+function callTarget(target){return target();};
+undefined
+function returnSomeString(){return 'Sample';};
+undefined
+function returnSomeFunction(){return returnSomeString;};
+undefined
+callTarget(returnSomeString);
+"Sample"
+returnSomeFunction();
+function returnSomeString(){return 'Sample';}
+returnSomeFunction()();
+"Sample"
 ```
 
 ### Console以外の動き（もしあれば）
