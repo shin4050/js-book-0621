@@ -12,17 +12,160 @@
 
 ## 授業スライドの説明（4時間目～5時間目）
 
-説明の中で実行したログ、分かったこと、疑問などがあればここに書く。
+アロー関数式は楽そうだが慣れるのに時間がかかりそう
+再帰・・・ある関数が、その実行時に自分自身(関数)を呼び出すこと(サンプル6-3-2)
 
 ### Consoleの実行ログ
 
+#5-2-1
 ```
-【ここに書く】
+function hello(name){
+	return 'こんにちは、' + name + 'さん';
+}
+undefined
+hello('イマシン')
+"こんにちは、イマシンさん"
+var myFunction = hello;
+undefined
+myFunction
+function hello(name){
+	return 'こんにちは、' + name + 'さん';
+}
+myFunction('イマシン')
+"こんにちは、イマシンさん"
 ```
+
+#5-2-2
+```
+function double(x){
+	return x*2;
+}
+undefined
+double(1)
+2
+double(2)
+4
+var numbers = [1,2,3,4,5];
+undefined
+numbers.map(double)
+(5) [2, 4, 6, 8, 10]
+```
+
+#5-2-3
+```
+function foo(){
+	return "hello";
+}
+undefined
+foo(1)
+"hello"
+foo()
+"hello"
+var a = function foo(){
+	return "hello";
+}
+undefined
+a(1)
+"hello"
+```
+
+#5-2-4
+```
+var b = function(){
+	return "hello";
+}
+undefined
+b()
+"hello"
+
+var c = () => {
+	return "hello";
+}
+undefined
+c()
+"hello"
+
+var numbes = [1,2,3,4,5];
+undefined
+numbers.map(function(x){
+	return 2*x;
+})
+(5) [2, 4, 6, 8, 10]
+numbers.map((x) => {
+	return 2*x;
+})
+(5) [2, 4, 6, 8, 10]
+numbers.map(x => 2*x)
+(5) [2, 4, 6, 8, 10]
+```
+
+#6-3-2
+```
+function f(n){
+	if(n<=0){
+		return 1;
+    }
+	return n*f(n-1);
+}
+undefined
+f(3)
+6
+f(5)
+120
+f(1)
+1
+f(0)
+1
+```
+
+#6-4-3
+```
+function newCounter(){
+	var count = 1;
+	return () => count++;
+}
+//countが関数の中にある
+undefined
+var counter1 = newCounter();
+undefined
+var counter2 = newCounter();
+undefined
+//1と2それぞれにcountが存在する(別のもの)
+counter1()
+1
+counter1()
+2
+counter2()
+1
+counter2()
+2
+counter2()
+3
+counter1()
+3
+counter1()
+4
+```
+
+#7-2
+```
+window.alert === alert;
+true
+window.innerWidth === innerWidth;
+true
+sampleValue = 5;
+5
+window.sampleValue;
+5
+```
+
+##スライド説明コメント
+アロー関数式は楽そうだが慣れるのに時間がかかりそう
+再帰・・・ある関数が、その実行時に自分自身(関数)を呼び出すこと(サンプル6-3-2)
 
 ### Console以外の動き（もしあれば）
 
-【ここに書く（なければ省略可）】
+
 
 ### 分かったこと
 
